@@ -182,18 +182,14 @@
                     method: "GET"
                 }).done(function (response) {
                     var len = response.response.docs.length;                   
-                    for (var i = 0; i < len; i++) {
-                        if (recNum == counter){
-                            break;
-                        } else {
+                    for (var i = 0; i < recNum; i++) {
                             resultHeading = response.response.docs[i].headline.main;
                             resultAuthor = response.response.docs[i].byline.original;
                             resultCat = response.response.docs[i].type_of_material;
                             resultDate = response.response.docs[i].pub_date;
                             resultLink = response.response.docs[i].web_url;
                             counter = i + 1;
-                            createResults();
-                        }//ends else
+                            createResults();                      
                     }//ends for loop
                 });//ends done
             }//ends ajaxCall
